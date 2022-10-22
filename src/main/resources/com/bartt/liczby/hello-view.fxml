@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.bartt.liczby.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bartt.liczby.HelloController">
+   <children>
+      <Button fx:id="btn1" layoutX="268.0" layoutY="211.0" mnemonicParsing="false" onAction="#Click" prefHeight="37.0" prefWidth="66.0" text="sprawdż" />
+      <TextField fx:id="txt1" layoutX="214.0" layoutY="163.0" prefHeight="37.0" prefWidth="172.0" />
+      <Label fx:id="lb2" layoutX="286.0" layoutY="125.0" text="Label" visible="false" />
+      <Label fx:id="lb1" layoutX="212.0" layoutY="125.0" text="Label" visible="false" />
+      <Label fx:id="lb3" layoutX="361.0" layoutY="125.0" text="Label" visible="false" />
+      <Label layoutX="223.0" layoutY="14.0" text="DZIAŁANIA">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn2" layoutX="250.0" layoutY="312.0" mnemonicParsing="false" onAction="#Koniec" prefHeight="55.0" prefWidth="101.0" text="ZAKOŃCZ" />
+   </children>
+</Pane>
