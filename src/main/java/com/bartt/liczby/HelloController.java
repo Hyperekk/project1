@@ -17,6 +17,7 @@ public class HelloController {
     public Label lb3;
     public Button btn2;
     public TextField txt1;
+    public Label lb4;
 
 
     Random random = new Random();
@@ -80,6 +81,7 @@ public class HelloController {
         {
             punkty = punkty - 10;
         }
+        lb4.setText(""+punkty);
 
         liczenie();
     }
