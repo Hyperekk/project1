@@ -2,10 +2,7 @@ package com.bartt.liczby;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.util.Random;
 import java.util.stream.Stream;
@@ -18,6 +15,7 @@ public class HelloController {
     public Button btn2;
     public TextField txt1;
     public Label lb4;
+    public ComboBox cb1;
 
 
     Random random = new Random();
@@ -27,7 +25,7 @@ public class HelloController {
     @FXML
     public void initialize()
     {
-       liczenie();
+        liczenie();
     }
 
     @FXML
@@ -36,6 +34,9 @@ public class HelloController {
         int a = random.nextInt(99) + 1;
         int b = random.nextInt(99) + 1;
         int dzialanie = random.nextInt(3) + 1;
+
+
+
 
         Stream.of(lb1, lb2, lb3).forEach(lb -> lb.setVisible(true));
             lb1.setText("" + a);
@@ -56,24 +57,25 @@ public class HelloController {
                 lb2.setText("*");
                 wynik = a*b;
             }
+
+            cb1.getItems().add(wynik);
+
+            for (int i = 0;i<4;i++)
+            {
+                int losowa = random.nextInt(999) + 1;
+                cb1.getItems().add(losowa);
+            }
+
+
     }
     public void Click(ActionEvent actionEvent)
     {
         //dodaje lub odejmuje punkty
-        int odpowiedz;
 
-        try {
-            odpowiedz = Integer.parseInt(txt1.getText());
 
-        } catch (Exception exception) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERROR");
-            alert.setHeaderText("Coś się nie zgadza");
-            alert.showAndWait();
-            return;
-        }
 
-        if (odpowiedz == wynik)
+
+        if (cb1.getValue().equals(wynik))
         {
             punkty = punkty + 5;
         }
